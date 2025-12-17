@@ -1,8 +1,5 @@
-package com.example.demo.repository;
-
-import org.springframework.stereotype.Service;
-
+package com.example.demo.Serviceimpl;
+import org.springframework.stereotype.service;
+import com.example.demo.Service.StudentService;
 @Service
-public interface StudentService{
-
-}
+public class StudentServiceimple implements StudentService{}
