@@ -1,15 +1,5 @@
-package com.example.demo.ServiceImpl;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.example.demo.entity.Student;
-import com.example.demo.repository.StudentRepository;
-import com.example.demo.service.StudentService;
-import com.example.demo.exception.ResourceNotFoundException;
-
 @Service
-public class StudentServiceImple implements StudentService {
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
@@ -18,10 +8,10 @@ public class StudentServiceImple implements StudentService {
     public Student saveStudent(Student student) {
         return studentRepository.save(student);
     }
-    public Student getStudentById(Long id){
+
+    @Override
+    public Student getStudentById(Long id) {
         return studentRepository.findById(id)
-        .orElseThrow(()-> new ResourceNotFoundException("Student not found"));
+            .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
     }
-
-
 }
