@@ -10,7 +10,7 @@ import com.example.demo.service.StudentService;
 
 @RestController
 public class StudentController {
-    @Autowired
+    @Autowired 
     StudentService studentService;
 
     @PostMapping("/postdata")
